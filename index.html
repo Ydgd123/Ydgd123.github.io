@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>张晋滔 | 金牌全科家教</title>
+    <title>张老师 | 专业全科家教简历</title>
     <style>
         :root {
-            --primary-color: #2563eb; /*以此蓝色建立信任感*/
-            --secondary-color: #1e40af;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f3f4f6;
+            /* 采用更深沉、严肃的配色方案 */
+            --primary-color: #1e3a8a; /* 深海军蓝，专业稳重 */
+            --accent-color: #9a3412;  /* 古铜色强调色，代替鲜红，更具学术感 */
+            --text-dark: #111827;
+            --text-mid: #4b5563;
+            --bg-light: #f8fafc; /* 冷灰背景 */
             --white: #ffffff;
         }
 
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             margin: 0;
@@ -27,140 +28,192 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            background-color: var(--bg-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* 头部 Hero Section */
+        /* --- 头部核心信息区 --- */
         header {
-            background-color: var(--white);
-            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #312e81 100%);
+            color: var(--white);
+            padding: 50px 25px 40px;
             text-align: center;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 10px 25px -10px rgba(30, 58, 138, 0.5);
             margin-bottom: 30px;
         }
 
         h1 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            font-size: 2.5rem;
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .subtitle {
+        .education {
             font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 20px;
-            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 10px;
+            font-weight: 300;
         }
 
-        .tags {
+        /* 新增：重点强调栏 */
+        .key-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .key-badge {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+        }
+        .key-badge i { margin-right: 8px; }
+
+        /* 能力标签 */
+        .tags-bar {
             display: flex;
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
+            margin-top: 20px;
         }
 
         .tag {
-            background-color: #e0e7ff;
-            color: var(--secondary-color);
-            padding: 5px 15px;
+            background-color: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--white);
+            padding: 6px 14px;
             border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: bold;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
-        /* 卡片通用样式 */
+        /* --- 内容区块通用样式 --- */
+        .content-section {
+            padding: 20px 25px;
+        }
+
         .card {
             background: var(--white);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            border: 1px solid #e5e7eb;
         }
 
         .section-title {
-            border-left: 5px solid var(--primary-color);
-            padding-left: 15px;
-            margin-bottom: 20px;
             font-size: 1.5rem;
-            color: var(--text-dark);
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 12px;
+            border-radius: 4px;
         }
 
-        /* 成绩亮点 Grid */
-        .achievements-grid {
+        /* 战绩列表风格 */
+        .achievement-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
         }
 
-        .achievement-item {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
+        .achieve-item {
+            background-color: #fcfafa;
+            border-left: 4px solid var(--accent-color);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .achieve-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
         }
 
         .score-highlight {
-            color: #dc2626; /* 红色强调分数 */
+            color: var(--accent-color);
+            font-weight: 800;
+        }
+
+        /* 教学特色列表 */
+        .feature-list p {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        .feature-icon {
+            color: var(--accent-color);
+            margin-right: 10px;
             font-weight: bold;
-            font-size: 1.2rem;
         }
 
-        /* 经历列表 */
-        .timeline-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-
-        .timeline-date {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .timeline-role {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        /* 底部联系 */
-        .contact-bar {
-            background: var(--primary-color);
+        /* --- 底部联系栏 (含二维码) --- */
+        .footer-contact {
+            background: var(--text-dark); /* 深灰色背景更显严肃 */
             color: var(--white);
             text-align: center;
-            padding: 30px;
-            border-radius: 20px 20px 0 0;
-            margin-top: 40px;
+            padding: 40px 25px;
+            margin-top: auto; /* 推到底部 */
+            border-radius: 25px 25px 0 0;
         }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        .contact-info span { margin: 0 10px; }
         
-        .contact-btn {
-            display: inline-block;
+        /* 二维码样式 */
+        .qr-container {
             background: var(--white);
-            color: var(--primary-color);
-            padding: 10px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: transform 0.2s;
+            padding: 15px;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
-        
-        .contact-btn:hover {
-            transform: scale(1.05);
+
+        .qr-image {
+            width: 180px;
+            height: 180px;
+            display: block;
+        }
+        .qr-hint {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-weight: 500;
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 10px; }
+            h1 { font-size: 2.2rem; }
+            .key-highlights { flex-direction: column; gap: 10px; }
+            .key-badge { width: 100%; justify-content: center;}
+            .achievement-list { grid-template-columns: 1fr; }
+            .contact-info span { display: block; margin: 10px 0; }
         }
     </style>
 </head>
@@ -169,9 +222,19 @@
 <div class="container">
     
     <header>
-        <h1>张晋滔</h1>
-        <div class="subtitle">桂林电子科技大学 · 电子信息硕士研究生</div>
-        <div class="tags">
+        <h1>张老师</h1>
+        <div class="education">桂林电子科技大学 · 电子信息硕士研究生</div>
+
+        <div class="key-highlights">
+            <div class="key-badge">
+                <i>🏛️</i> 前机构专职教师 (经验丰富)
+            </div>
+            <div class="key-badge">
+                <i>📅</i> 稳定可靠 · 可长期辅导
+            </div>
+        </div>
+
+        <div class="tags-bar">
             <span class="tag">初高中全科</span>
             <span class="tag">数理化英</span>
             <span class="tag">考研专业课135分</span>
@@ -179,61 +242,52 @@
         </div>
     </header>
 
-    <div class="card">
-        <h2 class="section-title">🏆 提分案例 (Result Highlights)</h2>
-        <div class="achievements-grid">
-            <div class="achievement-item">
-                <div class="timeline-date">2021.09 - 2022.06</div>
-                <strong>初三毕业生全科辅导</strong>
-                <p>针对函数、电学及化学方程式重点强化。学生期中考试<span class="score-highlight">总分提升60分</span>，顺利考入目标高中。</p>
-            </div>
-            <div class="achievement-item">
-                <div class="timeline-date">2025.03 - 至今</div>
-                <strong>高三文科生数学救急</strong>
-                <p>帮助理转文学生克服数学短板。辅导后学生<span class="score-highlight">2次考取全班第一</span>，成绩稳定在班级前5。</p>
-            </div>
-            <div class="achievement-item">
-                <div class="timeline-date">2022.10 - 2023.06</div>
-                <strong>高一数理定期辅导</strong>
-                <p>梳理力学与三角函数难点，建立错题本习惯。期末排名从班级中下游<span class="score-highlight">提升至前15名</span>。</p>
-            </div>
-            <div class="achievement-item">
-                <div class="timeline-date">2024.09 - 2024.12</div>
-                <strong>本科生考研指导</strong>
-                <p>全程指导2名学生，<span class="score-highlight">全员一战考入上海大学</span>，毕业设计获“优秀”评价。</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2 class="section-title">💡 教学风格 & 理念</h2>
-        <p><strong>🎯 方法独特：</strong> 不搞题海战术，擅长从方法论角度构建知识框架，帮助学生举一反三。</p>
-        <p><strong>🧠 习惯养成：</strong> 优先关注培养“勤思考”的习惯，建立错题本与知识导图，授人以鱼不如授人以渔。</p>
-        <p><strong>🤝 善于沟通：</strong> 性格耐心有亲和力，擅长与青少年交流，能将复杂概念简单化。</p>
-    </div>
-
-    <div class="card">
-        <h2 class="section-title">💼 履历概览</h2>
+    <div class="content-section">
         
-        <div class="timeline-item">
-            <div class="timeline-date">2020.06 - 2021.06</div>
-            <div class="timeline-role">专职理科教师 | 长沙县智利英语</div>
-            <div>全职负责理科教学工作，积累了丰富的公立/机构教学经验。</div>
+        <div class="card">
+            <h2 class="section-title">教学战绩精选 (Selected Achievements)</h2>
+            <div class="achievement-list">
+                <div class="achieve-item">
+                    <div class="achieve-title">🚀 初三中考逆袭</div>
+                    <p>针对基础薄弱点进行系统复习与专题强化，数理化三科<span class="score-highlight">总分提升60分</span>，顺利考入目标高中。</p>
+                </div>
+                <div class="achieve-item">
+                    <div class="achieve-title">📈 高三文科数学救急</div>
+                    <p>帮助理转文学生重建信心。辅导后<span class="score-highlight">2次斩获全班第一</span>，数学成绩稳定在班级前5名。</p>
+                </div>
+                <div class="achieve-item">
+                    <div class="achieve-title">📘 高一排名跃升</div>
+                    <p>建立错题本与知识导图习惯。期末排名从班级中下游<span class="score-highlight">跃升至前15名</span>。</p>
+                </div>
+                <div class="achieve-item">
+                    <div class="achieve-title">🎓 本科考研指导</div>
+                    <p>全程指导本专业学生，<span class="score-highlight">全员一战考入上海大学</span>，毕业设计获“优秀”评级。</p>
+                </div>
+            </div>
         </div>
 
-        <div class="timeline-item">
-            <div class="timeline-date">2019.03 - 2020.03</div>
-            <div class="timeline-role">专职理科教师 | 长沙县星沙拓扑教育</div>
-            <div>早期教育工作经验，奠定了扎实的授课基础。</div>
+        <div class="card">
+            <h2 class="section-title">教学特色与理念</h2>
+            <div class="feature-list">
+                <p><span class="feature-icon">💡</span><strong>注重方法论构建：</strong>拒绝单纯的题海战术。擅长从方法论角度帮助学生构建知识框架，查漏补缺，实现举一反三。</p>
+                <p><span class="feature-icon">🧠</span><strong>培养核心习惯：</strong>优先关注培养学生“勤于思考”和主动学习的良好习惯，授人以鱼不如授人以渔。</p>
+                <p><span class="feature-icon">🤝</span><strong>极具亲和力：</strong>性格耐心，擅长以青少年易于理解的方式讲解复杂概念，沟通顺畅高效。</p>
+            </div>
         </div>
     </div>
 
-    <div class="contact-bar">
-        <h3>预约试听 / 咨询课程</h3>
-        <p>电话: 130-7767-3897 &nbsp;|&nbsp; 微信: qq2428092649</p>
-        <p style="font-size: 0.9rem; opacity: 0.8;">邮箱: z2428092649@gmail.com</p>
-        <a href="tel:13077673897" class="contact-btn">📞 立即拨打</a>
-    </div>
+    <footer class="footer-contact">
+        <h2>预约试听 / 咨询课程</h2>
+        <div class="contact-info">
+            <span>📞 电话: 130-7767-3897</span> | 
+            <span>✉️ 邮箱: z2428092649@gmail.com</span>
+        </div>
+        
+        <div class="qr-container">
+            <img src="image_0.png" alt="张老师微信二维码" class="qr-image">
+            <div class="qr-hint">扫一扫添加我的微信</div>
+        </div>
+    </footer>
 
 </div>
 
