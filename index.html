@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>张晋滔老师 - 专业家教简历</title>
+    <title>张晋滔老师 - 专业长期稳定家教服务</title>
     <style>
         * {
             margin: 0;
@@ -26,6 +26,25 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .stability-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b6b;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         .name {
             font-size: 24px;
@@ -105,6 +124,63 @@
             margin-right: 5px;
             margin-bottom: 5px;
         }
+        .long-term-box {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border: 2px solid #ffb300;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .long-term-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+        .long-term-desc {
+            color: #5d4037;
+            font-size: 15px;
+        }
+        .wechat-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 12px;
+        }
+        .wechat-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #07c160;
+            margin-bottom: 15px;
+        }
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .wechat-id {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+            margin-top: 10px;
+        }
         .btn-contact {
             display: block;
             width: 100%;
@@ -125,6 +201,25 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .feature {
+            flex: 1;
+            min-width: 150px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        .feature-title {
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 5px;
+        }
         .footer {
             text-align: center;
             font-size: 13px;
@@ -132,26 +227,55 @@
             margin-top: 30px;
             padding: 15px;
         }
+        .guarantee {
+            display: flex;
+            align-items: center;
+            background: #e8f5e9;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin: 15px 0;
+        }
+        .guarantee i {
+            color: #4caf50;
+            font-size: 20px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="header">
+        <div class="stability-badge">长期稳定辅导</div>
         <div class="name">张晋滔</div>
         <div class="title">桂林电子科技大学 - 电子信息硕士研究生</div>
         <div class="contact-info">
             <div class="contact-item">📞 130-7767-3897</div>
             <div class="contact-item">✉️ z2428092649@gmail.com</div>
-            <div class="contact-item">💬 微信: qq2428092649</div>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">📚 授课信息</div>
-        <div class="highlight-box">
-            <strong>可授课时间：</strong>无课程冲突时均可<br>
-            <strong>所教科目：</strong>初中及高中数理化英
+        <div class="section-title">📱 扫码联系</div>
+        <div class="wechat-section">
+            <div class="wechat-title">微信扫码添加老师</div>
+            <div class="qr-code">
+                <!-- 请将此处替换为您的微信二维码图片 -->
+                <img src="https://via.placeholder.com/200x200/07C160/FFFFFF?text=微信二维码" alt="微信二维码">
+                <!-- 如果您的二维码图片是本地文件，请使用以下格式 -->
+                <!-- <img src="wechat_qr.jpg" alt="微信二维码"> -->
+            </div>
+            <div class="wechat-id">微信: qq2428092649</div>
+            <p style="margin-top: 15px; color: #666; font-size: 14px;">扫码添加微信，可免费咨询学习问题</p>
         </div>
-        <p><strong>长期稳定辅导：</strong>可为每位学生制定个性化学习计划，提供长期稳定的辅导服务，确保学习效果持续性。</p>
+    </div>
+
+    <div class="long-term-box">
+        <div class="long-term-title">✨ 长期稳定辅导服务 ✨</div>
+        <div class="long-term-desc">
+            <p>✅ 可为每位学生制定个性化长期学习计划</p>
+            <p>✅ 提供稳定、持续的教学服务，确保学习效果</p>
+            <p>✅ 定期评估学习进度，及时调整教学方案</p>
+            <p>✅ 建立学生学习档案，跟踪学习轨迹</p>
+        </div>
     </div>
 
     <div class="section">
@@ -160,25 +284,44 @@
             <strong>前机构专职教师：</strong>曾在长沙县星沙拓扑教育、长沙县智利英语担任专职理科教师，具备丰富的教学经验和专业教学能力。
         </div>
         <p>作为前机构专职教师，我熟悉各类教学大纲和考试要求，能够根据学生特点制定针对性教学方案，确保教学质量。</p>
+        
+        <div class="guarantee">
+            <span style="font-size: 20px;">✅</span>
+            <span><strong>教学稳定性保障：</strong>可签订长期辅导协议，确保教学连续性和稳定性</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">📚 授课信息</div>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-title">授课科目</div>
+                <div>初中及高中<br>数理化英</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">授课时间</div>
+                <div>无课程冲突时<br>均可安排</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">服务特色</div>
+                <div>个性化<br>长期规划</div>
+            </div>
+        </div>
     </div>
 
     <div class="section">
         <div class="section-title">💡 教学优势</div>
         <div class="experience-item">
-            <div class="experience-title">学科扎实</div>
-            <div class="experience-desc">核心课程基础扎实，英语六级500分，考研中山大学自命题《信号与系统》135分。</div>
+            <div class="experience-title">前机构专职教师经验</div>
+            <div class="experience-desc">在长沙县星沙拓扑教育、长沙县智利英语担任专职理科教师，熟悉教学大纲和考试要求。</div>
         </div>
         <div class="experience-item">
-            <div class="experience-title">善于沟通</div>
-            <div class="experience-desc">性格耐心、有亲和力，能够以学生易于理解的方式讲解复杂概念，擅长与青少年交流。</div>
+            <div class="experience-title">长期稳定辅导</div>
+            <div class="experience-desc">提供持续稳定的教学服务，可签订长期辅导协议，确保学习连续性和效果。</div>
         </div>
         <div class="experience-item">
-            <div class="experience-title">方法独特</div>
-            <div class="experience-desc">优先关注培养学生勤思考的习惯，擅长从方法论的角度帮助学生构建知识框架，查补缺，并举一反三。</div>
-        </div>
-        <div class="experience-item">
-            <div class="experience-title">认真负责</div>
-            <div class="experience-desc">可为每位学生制定个性化学习计划，注重学习习惯的培养。</div>
+            <div class="experience-title">学科基础扎实</div>
+            <div class="experience-desc">英语六级500分，考研中山大学自命题《信号与系统》135分，专业基础扎实。</div>
         </div>
     </div>
 
@@ -186,25 +329,25 @@
         <div class="section-title">📈 教学成果</div>
         <div class="experience-item">
             <div class="experience-title">初三毕业生数理化全科辅导</div>
-            <div class="experience-period">2021.09-2022.06</div>
-            <div class="experience-desc">针对学生基础薄弱环节进行系统复习，重点强化函数、电学及化学方程式，通过专题训练，学生期中考试数理化三科总分提升60分，顺利考入目标高中。</div>
+            <div class="experience-period">2021.09-2022.06 (长期辅导)</div>
+            <div class="experience-desc">通过系统长期辅导，学生期中考试数理化三科总分提升60分，顺利考入目标高中。</div>
         </div>
         <div class="experience-item">
             <div class="experience-title">高一学生数学、物理定期辅导</div>
-            <div class="experience-period">2022.10-2023.06</div>
-            <div class="experience-desc">帮助学生适应高中学习节奏，梳理重点难点(如力学分析、三角函数)，培养学生建立错题本和知识导图的习惯，期未排名从班级中下游提升至前15名。</div>
+            <div class="experience-period">2022.10-2023.06 (持续8个月)</div>
+            <div class="experience-desc">通过长期稳定辅导，帮助学生适应高中学习节奏，期末排名从班级中下游提升至前15名。</div>
         </div>
         <div class="experience-item">
             <div class="experience-title">高三文科生数学辅导</div>
-            <div class="experience-period">2025.03至今</div>
-            <div class="experience-desc">该生因在理科综合学习上受挫，为规避难度而选择文科。一学期及暑假后，学生2次考取数学全班第一，数学成绩稳定在班级前5，学习主动性显著增强。</div>
+            <div class="experience-period">2025.03至今 (持续辅导中)</div>
+            <div class="experience-desc">通过长期稳定辅导，学生数学成绩稳定在班级前5，学习主动性显著增强。</div>
         </div>
     </div>
 
-    <a href="tel:13077673897" class="btn-contact">立即联系张老师</a>
+    <a href="tel:13077673897" class="btn-contact">📞 立即电话联系张老师</a>
 
     <div class="footer">
-        © 2025 张晋滔老师 - 专业家教服务
+        © 2025 张晋滔老师 - 专业长期稳定家教服务
     </div>
 </body>
 </html>
