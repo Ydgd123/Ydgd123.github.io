@@ -158,11 +158,24 @@
             color: #07c160;
             margin-bottom: 15px;
         }
-        .qr-code img {
-            width: auto;
+        /* 修复：添加二维码容器样式 */
+        .qr-code {
+            width: 200px;
             height: 200px;
-            margin: auto;
-            display: block;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .qr-code img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
         .wechat-id {
             font-size: 16px;
@@ -247,7 +260,11 @@
         <div class="wechat-section">
             <div class="wechat-title">微信扫码添加老师</div>
             <div class="qr-code">
-                <img src="微信二维码.jpg" alt="张老师微信二维码">
+                <!-- 请确保图片路径和文件名正确 -->
+                
+                <p style="display:none; color: #ff6b6b; font-size: 14px; margin-top: 10px;">
+                    二维码加载失败，请检查图片文件是否存在或尝试直接添加微信: qq2428092649
+                </p>
             </div>
             <div class="wechat-id">微信: qq2428092649</div>
             <p style="margin-top: 15px; color: #666; font-size: 14px;">扫码添加微信，可免费咨询学习问题</p>
