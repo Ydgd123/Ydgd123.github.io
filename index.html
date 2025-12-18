@@ -59,13 +59,16 @@
         .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
             margin-top: 15px;
         }
         .contact-item {
             display: flex;
             align-items: center;
-            font-size: 14px;
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 10px;
+            border-radius: 6px;
         }
         .contact-item i {
             margin-right: 5px;
@@ -312,6 +315,84 @@
             font-size: 13px;
             margin-top: 8px;
         }
+        .address-section {
+            margin-top: 20px;
+            padding: 12px 15px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+        }
+        .address-title {
+            font-weight: bold;
+            color: #0d47a1;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+        .address-content {
+            color: #1565c0;
+            font-size: 14px;
+        }
+        /* 课程设置样式 */
+        .courses-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .course-card {
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        .course-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .course-features {
+            margin: 15px 0;
+        }
+        .course-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .course-feature i {
+            color: #4caf50;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        .course-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e65100;
+            margin-top: 10px;
+        }
+        .course-period {
+            font-size: 13px;
+            color: #666;
+            margin-top: 5px;
+        }
+        /* 课程卡片特定颜色 */
+        .course-one-on-one {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 4px solid #4caf50;
+        }
+        .course-small-class {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 4px solid #2196f3;
+        }
+        .course-winter-camp {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-left: 4px solid #ff9800;
+        }
     </style>
 </head>
 <body>
@@ -322,6 +403,7 @@
         <div class="contact-info">
             <div class="contact-item">📞 130-7767-3897</div>
             <div class="contact-item">✉️ z2428092649@gmail.com</div>
+            <div class="contact-item">📍 芙蓉区望远佳苑（东雅中学旁）</div>
         </div>
     </div>
 
@@ -371,6 +453,15 @@
             <span style="font-size: 20px;">✅</span>
             <span><strong>教学稳定性保障：</strong>可签订长期辅导协议，确保教学连续性和稳定性</span>
         </div>
+        
+        <!-- 地址信息部分 -->
+        <div class="address-section">
+            <div class="address-title">📍 教学地址</div>
+            <div class="address-content">芙蓉区望远佳苑（东雅中学旁）</div>
+            <p style="font-size: 12px; color: #666; margin-top: 8px; line-height: 1.4;">
+                该地址位于东雅中学附近，交通便利，环境安静，适合学生学习。可为东雅中学及周边学校学生提供上门辅导或到我家辅导。
+            </p>
+        </div>
     </div>
 
     <div class="section">
@@ -388,6 +479,92 @@
                 <div class="feature-title">服务特色</div>
                 <div>个性化<br>长期规划</div>
             </div>
+        </div>
+    </div>
+
+    <!-- 新增课程设置部分 -->
+    <div class="section">
+        <div class="section-title">🎓 课程设置</div>
+        <div class="courses-container">
+            <!-- 一对一课程 -->
+            <div class="course-card course-one-on-one">
+                <div class="course-title">一对一专属辅导</div>
+                <div class="course-features">
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>完全个性化教学，根据学生情况定制学习计划</span>
+                    </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>针对性强，重点攻克学生薄弱环节</span>
+                    </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>时间灵活，可根据学生时间安排课程</span>
+                    </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>全程跟踪学习进度，定期反馈学习情况</span>
+                    </div>
+                </div>
+                <div class="course-price">120-150元/小时</div>
+                <div class="course-period">可报10/20/30课时套餐，长期报读有优惠</div>
+            </div>
+            
+            <!-- 小班课 -->
+            <div class="course-card course-small-class">
+                <div class="course-title">精品小班课（2-4人）</div>
+                <div class="course-features">
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>小组学习，互动性强，学习氛围好</span>
+                    </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>价格实惠，性价比高</span>
+                    </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>按水平分班，保证教学效果</span>
+                    </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>定期测试，确保每个学生都跟上进度</span>
+                    </div>
+                </div>
+                <div class="course-price">80-100元/小时</div>
+                <div class="course-period">每班2-4人，需水平测试后分班</div>
+            </div>
+            
+            <!-- 寒假班 -->
+            <div class="course-card course-winter-camp">
+                <div class="course-title">寒假强化班</div>
+                <div class="course-features">
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>寒假集中学习，快速提升成绩</span>
+                    </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>系统复习上学期内容，预习下学期知识</span>
+                    </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>每日3小时，连续15天，共45课时</span>
+                    </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>包含寒假作业辅导+新学期预习</span>
+                    </div>
+                </div>
+                <div class="course-price">3000元/期（45课时）</div>
+                <div class="course-period">2025年1月15日-2月5日，早9:00-12:00</div>
+            </div>
+        </div>
+        
+        <div class="guarantee" style="margin-top: 20px;">
+            <span style="font-size: 20px;">📢</span>
+            <span><strong>课程优惠：</strong>报读20课时以上享9折，推荐同学报名各减200元</span>
         </div>
     </div>
 
