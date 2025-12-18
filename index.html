@@ -369,15 +369,6 @@
             margin-right: 8px;
             font-size: 16px;
         }
-        .course-detail {
-            font-size: 13px;
-            color: #666;
-            margin-top: 5px;
-            text-align: center;
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 4px;
-        }
         /* 课程卡片特定颜色 */
         .course-one-on-one {
             background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
@@ -390,6 +381,20 @@
         .course-winter-camp {
             background: linear-gradient(135deg, #fff3e0, #ffe0b2);
             border-left: 4px solid #ff9800;
+        }
+        .free-trial {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .free-trial-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 8px;
         }
         .group-discount {
             background: linear-gradient(135deg, #fff8e1, #ffecb3);
@@ -405,16 +410,25 @@
             color: #e65100;
             margin-bottom: 8px;
         }
+        .subject-emphasis {
+            background: linear-gradient(135deg, #1a73e8, #6c8ef5);
+            color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="stability-badge">长期稳定辅导</div>
-        <div class="name">张晋滔</div>
+        <div class="name">张老师</div>
         <div class="title">桂林电子科技大学 - 电子信息硕士研究生</div>
         <div class="contact-info">
             <div class="contact-item">📞 130-7767-3897</div>
-            <div class="contact-item">✉️ z2428092649@gmail.com</div>
+            <div class="contact-item">📚 初中高中数理化英</div>
             <div class="contact-item">📍 芙蓉区望远佳苑（东雅中学旁）</div>
         </div>
     </div>
@@ -433,10 +447,9 @@
                             二维码图片<br>加载失败
                         </div>
                     </div>
-                    <div class="text">请手动添加微信: qq2428092649</div>
+                    <div class="text">请长按识别二维码添加老师微信</div>
                 </div>
             </div>
-            <div class="wechat-id">微信: qq2428092649</div>
             <p class="contact-instruction">长按识别上方二维码图案，加我为朋友</p>
             <p class="contact-instruction" style="color: #ff7043; font-size: 12px; margin-top: 5px;">
                 扫码添加微信，可免费咨询学习问题
@@ -476,13 +489,16 @@
         </div>
     </div>
 
+    <!-- 强调授课科目部分 -->
     <div class="section">
         <div class="section-title">📚 授课信息</div>
+        
+        <div class="subject-emphasis">
+            <div style="font-size: 20px; margin-bottom: 5px;">🎯 授课科目</div>
+            <div style="font-size: 18px;">初中及高中 数理化英</div>
+        </div>
+        
         <div class="features">
-            <div class="feature">
-                <div class="feature-title">授课科目</div>
-                <div>初中及高中<br>数理化英</div>
-            </div>
             <div class="feature">
                 <div class="feature-title">授课时间</div>
                 <div>无课程冲突时<br>均可安排</div>
@@ -494,7 +510,7 @@
         </div>
     </div>
 
-    <!-- 课程设置部分（已移除价格） -->
+    <!-- 课程设置部分 -->
     <div class="section">
         <div class="section-title">🎓 课程设置</div>
         <div class="courses-container">
@@ -519,12 +535,11 @@
                         <span>全程跟踪学习进度，定期反馈学习情况</span>
                     </div>
                 </div>
-                <div class="course-detail">具体安排及费用详情请微信咨询</div>
             </div>
             
-            <!-- 小班课 -->
+            <!-- 小班课（已简化） -->
             <div class="course-card course-small-class">
-                <div class="course-title">精品小班课（2-4人）</div>
+                <div class="course-title">精品小班课</div>
                 <div class="course-features">
                     <div class="course-feature">
                         <span style="font-size: 20px;">✅</span>
@@ -532,21 +547,16 @@
                     </div>
                     <div class="course-feature">
                         <span style="font-size: 20px;">✅</span>
-                        <span>按水平分班，保证教学效果</span>
-                    </div>
-                    <div class="course-feature">
-                        <span style="font-size: 20px;">✅</span>
-                        <span>定期测试，确保每个学生都跟上进度</span>
-                    </div>
-                    <div class="course-feature">
-                        <span style="font-size: 20px;">✅</span>
                         <span>同学之间可互相促进，共同进步</span>
                     </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>适合有一定基础，希望与同学一起进步的学生</span>
+                    </div>
                 </div>
-                <div class="course-detail">具体安排及费用详情请微信咨询</div>
             </div>
             
-            <!-- 寒假班 -->
+            <!-- 寒假班（已简化） -->
             <div class="course-card course-winter-camp">
                 <div class="course-title">寒假强化班</div>
                 <div class="course-features">
@@ -560,15 +570,21 @@
                     </div>
                     <div class="course-feature">
                         <span style="font-size: 20px;">✅</span>
-                        <span>每日3小时，连续15天，共45课时</span>
-                    </div>
-                    <div class="course-feature">
-                        <span style="font-size: 20px;">✅</span>
                         <span>包含寒假作业辅导+新学期预习</span>
                     </div>
                 </div>
-                <div class="course-detail">具体安排及费用详情请微信咨询</div>
             </div>
+        </div>
+        
+        <!-- 免费试课优先强调 -->
+        <div class="free-trial">
+            <div class="free-trial-title">🎯 先试听，再报名！</div>
+            <p style="font-size: 15px; color: #1b5e20; margin-bottom: 8px; font-weight: bold;">
+                提供60分钟免费试听课
+            </p>
+            <p style="font-size: 14px; color: #2e7d32; margin-bottom: 8px;">
+                体验真实教学效果，了解老师教学风格，满意后再报名！
+            </p>
         </div>
         
         <!-- 抱团报课优惠提示 -->
@@ -576,9 +592,6 @@
             <div class="group-discount-title">👥 抱团报课享专属优惠！</div>
             <p style="font-size: 14px; color: #5d4037; margin-bottom: 8px;">
                 同学/朋友一起报名，每人可获得额外优惠！
-            </p>
-            <p style="font-size: 13px; color: #8d6e63;">
-                2人同报享9折优惠，3人及以上同报享8.5折优惠！
             </p>
         </div>
         
@@ -677,7 +690,7 @@
     <a href="tel:13077673897" class="btn-contact">📞 立即电话联系张老师</a>
 
     <div class="footer">
-        © 2025 张晋滔老师 - 专业长期稳定家教服务
+        © 2025 张老师 - 专业长期稳定家教服务
     </div>
 
     <script>
