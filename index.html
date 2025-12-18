@@ -369,16 +369,14 @@
             margin-right: 8px;
             font-size: 16px;
         }
-        .course-price {
-            font-size: 20px;
-            font-weight: bold;
-            color: #e65100;
-            margin-top: 10px;
-        }
-        .course-period {
+        .course-detail {
             font-size: 13px;
             color: #666;
             margin-top: 5px;
+            text-align: center;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 4px;
         }
         /* 课程卡片特定颜色 */
         .course-one-on-one {
@@ -392,6 +390,20 @@
         .course-winter-camp {
             background: linear-gradient(135deg, #fff3e0, #ffe0b2);
             border-left: 4px solid #ff9800;
+        }
+        .group-discount {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .group-discount-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #e65100;
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -482,7 +494,7 @@
         </div>
     </div>
 
-    <!-- 新增课程设置部分 -->
+    <!-- 课程设置部分（已移除价格） -->
     <div class="section">
         <div class="section-title">🎓 课程设置</div>
         <div class="courses-container">
@@ -507,8 +519,7 @@
                         <span>全程跟踪学习进度，定期反馈学习情况</span>
                     </div>
                 </div>
-                <div class="course-price">120-150元/小时</div>
-                <div class="course-period">可报10/20/30课时套餐，长期报读有优惠</div>
+                <div class="course-detail">具体安排及费用详情请微信咨询</div>
             </div>
             
             <!-- 小班课 -->
@@ -521,19 +532,18 @@
                     </div>
                     <div class="course-feature">
                         <span style="font-size: 20px;">✅</span>
-                        <span>价格实惠，性价比高</span>
-                    </div>
-                    <div class="course-feature">
-                        <span style="font-size: 20px;">✅</span>
                         <span>按水平分班，保证教学效果</span>
                     </div>
                     <div class="course-feature">
                         <span style="font-size: 20px;">✅</span>
                         <span>定期测试，确保每个学生都跟上进度</span>
                     </div>
+                    <div class="course-feature">
+                        <span style="font-size: 20px;">✅</span>
+                        <span>同学之间可互相促进，共同进步</span>
+                    </div>
                 </div>
-                <div class="course-price">80-100元/小时</div>
-                <div class="course-period">每班2-4人，需水平测试后分班</div>
+                <div class="course-detail">具体安排及费用详情请微信咨询</div>
             </div>
             
             <!-- 寒假班 -->
@@ -557,14 +567,24 @@
                         <span>包含寒假作业辅导+新学期预习</span>
                     </div>
                 </div>
-                <div class="course-price">3000元/期（45课时）</div>
-                <div class="course-period">2025年1月15日-2月5日，早9:00-12:00</div>
+                <div class="course-detail">具体安排及费用详情请微信咨询</div>
             </div>
         </div>
         
+        <!-- 抱团报课优惠提示 -->
+        <div class="group-discount">
+            <div class="group-discount-title">👥 抱团报课享专属优惠！</div>
+            <p style="font-size: 14px; color: #5d4037; margin-bottom: 8px;">
+                同学/朋友一起报名，每人可获得额外优惠！
+            </p>
+            <p style="font-size: 13px; color: #8d6e63;">
+                2人同报享9折优惠，3人及以上同报享8.5折优惠！
+            </p>
+        </div>
+        
         <div class="guarantee" style="margin-top: 20px;">
-            <span style="font-size: 20px;">📢</span>
-            <span><strong>课程优惠：</strong>报读20课时以上享9折，推荐同学报名各减200元</span>
+            <span style="font-size: 20px;">💬</span>
+            <span><strong>课程详情咨询：</strong>所有课程具体安排、费用及优惠详情，请添加微信咨询沟通</span>
         </div>
     </div>
 
