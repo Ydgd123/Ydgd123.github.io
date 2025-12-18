@@ -1,65 +1,526 @@
-<style>
-/* 优化后的微信联系模块 - 匹配您的图片尺寸 */
-.wechat-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 10px 0;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 12px;
-}
-.wechat-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #07c160;
-    margin-bottom: 10px;
-}
-/* 根据您的图片尺寸764×1018调整容器 */
-.qr-code {
-    width: 200px; /* 固定宽度 */
-    height: 266px; /* 高度按比例计算：200px × (1018/764) ≈ 266px */
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    overflow: hidden;
-    padding: 5px;
-}
-.qr-code img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* 保持图片比例完整显示 */
-    border-radius: 4px;
-}
-.wechat-id {
-    font-size: 15px;
-    color: #333;
-    font-weight: 500;
-    margin: 8px 0;
-}
-.contact-instruction {
-    font-size: 13px;
-    color: #666;
-    margin-top: 8px;
-    line-height: 1.4;
-}
-</style>
-
-<!-- 在HTML部分 -->
-<div class="section">
-    <div class="section-title">📱 长按联系</div>
-    <div class="wechat-section">
-        <div class="wechat-title">微信扫码添加老师</div>
-        <div class="qr-code">
-            <!-- 确保图片文件名完全匹配 -->
-            <img src="wechat-qrcode.jpg" alt="张老师微信二维码" id="qrcode-image" onerror="showQRError()">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张老师 - 专业长期稳定家教服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a73e8, #6c8ef5);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .stability-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b6b;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .title {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        .contact-item i {
+            margin-right: 5px;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a73e8;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eaeaea;
+            display: flex;
+            align-items: center;
+        }
+        .section-title i {
+            margin-right: 8px;
+        }
+        .highlight-box {
+            background: #e8f4ff;
+            border-left: 4px solid #1a73e8;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+        .experience-item {
+            margin-bottom: 20px;
+        }
+        .experience-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #444;
+        }
+        .experience-period {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .experience-desc {
+            font-size: 15px;
+            color: #555;
+        }
+        .badge {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .long-term-box {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border: 2px solid #ffb300;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .long-term-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+        .long-term-desc {
+            color: #5d4037;
+            font-size: 15px;
+        }
+        /* 根据您的图片尺寸764×1018优化微信联系模块 */
+        .wechat-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 10px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 12px;
+        }
+        .wechat-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #07c160;
+            margin-bottom: 10px;
+        }
+        /* 根据您的图片尺寸764×1018（高宽比约1.33:1）设置容器 */
+        .qr-code {
+            width: 220px; /* 固定宽度 */
+            height: 293px; /* 高度 = 220px × (1018/764) ≈ 293px，四舍五入 */
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            overflow: hidden;
+            padding: 5px;
+        }
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 保持图片比例完整显示 */
+            border-radius: 4px;
+        }
+        .wechat-id {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+            margin: 8px 0;
+        }
+        .contact-instruction {
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+        .btn-contact {
+            display: block;
+            width: 100%;
+            background: #1a73e8;
+            color: white;
+            text-align: center;
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        .btn-contact:hover {
+            background: #0d5bc2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .feature {
+            flex: 1;
+            min-width: 150px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        .feature-title {
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 5px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            margin-top: 30px;
+            padding: 15px;
+        }
+        .guarantee {
+            display: flex;
+            align-items: center;
+            background: #e8f5e9;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin: 15px 0;
+        }
+        .guarantee i {
+            color: #4caf50;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .result-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff7043, #ffab40);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .result-item {
+            background: #fff8e1;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ffb300;
+        }
+        .result-title {
+            font-weight: bold;
+            color: #5d4037;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .result-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .stat {
+            background: #fff3e0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        .stat-value {
+            font-weight: bold;
+            color: #e65100;
+            font-size: 18px;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #8d6e63;
+        }
+        .qrcode-placeholder {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        .qrcode-placeholder .text {
+            color: #666;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="stability-badge">长期稳定辅导</div>
+        <div class="name">张晋滔</div>
+        <div class="title">桂林电子科技大学 - 电子信息硕士研究生</div>
+        <div class="contact-info">
+            <div class="contact-item">📞 130-7767-3897</div>
+            <div class="contact-item">✉️ z2428092649@gmail.com</div>
         </div>
-        <div class="wechat-id">微信: qq2428092649</div>
-        <p class="contact-instruction">长按识别上方二维码图案，添加老师微信好友</p>
     </div>
-</div>
+
+    <div class="section">
+        <div class="section-title">📱 长按联系</div>
+        <div class="wechat-section">
+            <div class="wechat-title">微信扫码添加老师</div>
+            <div class="qr-code">
+                <!-- 根据您的图片属性，文件名为"wechat-qrcode.jpg"，尺寸764×1018，89.8KB -->
+                <img src="wechat-qrcode.jpg" alt="张老师微信二维码" id="qrcode-image" onerror="showQRError()">
+                <!-- 如果图片加载失败，显示占位符 -->
+                <div id="qr-placeholder" class="qrcode-placeholder">
+                    <div style="width: 100px; height: 133px; background: #ddd; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                        <div style="text-align: center; color: #999; font-size: 12px;">
+                            二维码图片<br>加载失败
+                        </div>
+                    </div>
+                    <div class="text">请手动添加微信: qq2428092649</div>
+                </div>
+            </div>
+            <div class="wechat-id">微信: qq2428092649</div>
+            <p class="contact-instruction">长按识别上方二维码图案，加我为朋友</p>
+            <p class="contact-instruction" style="color: #ff7043; font-size: 12px; margin-top: 5px;">
+                扫码添加微信，可免费咨询学习问题
+            </p>
+        </div>
+    </div>
+
+    <div class="long-term-box">
+        <div class="long-term-title">✨ 长期稳定辅导服务 ✨</div>
+        <div class="long-term-desc">
+            <p>✅ 可为每位学生制定个性化长期学习计划</p>
+            <p>✅ 提供稳定、持续的教学服务，确保学习效果</p>
+            <p>✅ 定期评估学习进度，及时调整教学方案</p>
+            <p>✅ 建立学生学习档案，跟踪学习轨迹</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">👨‍🏫 教师身份</div>
+        <div class="highlight-box">
+            <strong>前机构专职教师：</strong>曾在长沙县星沙拓扑教育、长沙县智利英语担任专职理科教师，具备丰富的教学经验和专业教学能力。
+        </div>
+        <p>作为前机构专职教师，我熟悉各类教学大纲和考试要求，能够根据学生特点制定针对性教学方案，确保教学质量。</p>
+        
+        <div class="guarantee">
+            <span style="font-size: 20px;">✅</span>
+            <span><strong>教学稳定性保障：</strong>可签订长期辅导协议，确保教学连续性和稳定性</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">📚 授课信息</div>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-title">授课科目</div>
+                <div>初中及高中<br>数理化英</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">授课时间</div>
+                <div>无课程冲突时<br>均可安排</div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">服务特色</div>
+                <div>个性化<br>长期规划</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">💡 教学优势</div>
+        <div class="experience-item">
+            <div class="experience-title">前机构专职教师经验</div>
+            <div class="experience-desc">在长沙县星沙拓扑教育、长沙县智利英语担任专职理科教师，熟悉教学大纲和考试要求。</div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-title">长期稳定辅导</div>
+            <div class="experience-desc">提供持续稳定的教学服务，可签订长期辅导协议，确保学习连续性和效果。</div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-title">学科基础扎实</div>
+            <div class="experience-desc">英语六级500分，考研中山大学自命题《信号与系统》135分，专业基础扎实。</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">📈 教学成果</div>
+        <div class="result-item">
+            <div class="result-title">初三毕业生数理化全科辅导</div>
+            <div class="experience-period">2021.09-2022.06 (长期辅导)</div>
+            <div class="result-stats">
+                <div class="stat">
+                    <div class="stat-value">60分↑</div>
+                    <div class="stat-label">总分提升</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">目标高中</div>
+                    <div class="stat-label">顺利考入</div>
+                </div>
+            </div>
+            <div class="experience-desc">针对该生数理化基础薄弱问题，通过系统梳理+专项突破+模拟训练，9个月内数理化三科总分提升60分，成功考入目标高中。</div>
+            <div style="margin-top: 10px;">
+                <span class="result-badge">基础薄弱</span>
+                <span class="result-badge">全科提升</span>
+                <span class="result-badge">中考逆袭</span>
+            </div>
+        </div>
+        
+        <div class="result-item">
+            <div class="result-title">高一学生数理定期辅导</div>
+            <div class="experience-period">2022.10-2023.06 (持续8个月)</div>
+            <div class="result-stats">
+                <div class="stat">
+                    <div class="stat-value">中下游→前15</div>
+                    <div class="stat-label">班级排名</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">8个月</div>
+                    <div class="stat-label">稳步提升</div>
+                </div>
+            </div>
+            <div class="experience-desc">帮助高一学生快速适应高中学习节奏，重点突破力学分析、三角函数等难点，建立错题本和知识导图习惯，期末排名从班级中下游跃升至前15名。</div>
+            <div style="margin-top: 10px;">
+                <span class="result-badge">高中适应</span>
+                <span class="result-badge">方法培养</span>
+                <span class="result-badge">持续进步</span>
+            </div>
+        </div>
+        
+        <div class="result-item">
+            <div class="result-title">高三文科生数学辅导</div>
+            <div class="experience-period">2025.03至今 (持续辅导中)</div>
+            <div class="result-stats">
+                <div class="stat">
+                    <div class="stat-value">2次全班第1</div>
+                    <div class="stat-label">数学成绩</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">稳定前5</div>
+                    <div class="stat-label">班级排名</div>
+                </div>
+            </div>
+            <div class="experience-desc">该生因理科学习受挫而选择文科，对数学缺乏信心。通过针对性辅导+信心重建，一学期内2次考取数学全班第一，成绩稳定在班级前5，学习主动性显著增强。</div>
+            <div style="margin-top: 10px;">
+                <span class="result-badge">信心重建</span>
+                <span class="result-badge">文科数学</span>
+                <span class="result-badge">成绩飞跃</span>
+            </div>
+        </div>
+        
+        <div class="highlight-box" style="margin-top: 20px; background: #e8f5e9; border-left-color: #4caf50;">
+            <strong>教学成果保障：</strong>90%以上学生在一学期内成绩有明显提升，70%学生实现成绩跃升（提升20分以上或排名前进10名以上）。
+        </div>
+    </div>
+
+    <a href="tel:13077673897" class="btn-contact">📞 立即电话联系张老师</a>
+
+    <div class="footer">
+        © 2025 张晋滔老师 - 专业长期稳定家教服务
+    </div>
+
+    <script>
+        // 二维码加载错误处理
+        function showQRError() {
+            var imgElement = document.getElementById('qrcode-image');
+            var placeholderElement = document.getElementById('qr-placeholder');
+            
+            if (imgElement && placeholderElement) {
+                // 隐藏图片，显示占位符
+                imgElement.style.display = 'none';
+                placeholderElement.style.display = 'flex';
+                
+                // 在控制台输出错误信息
+                console.error('二维码图片加载失败，请检查：');
+                console.error('1. 图片文件名是否正确：应为 "wechat-qrcode.jpg"');
+                console.error('2. 图片是否与HTML文件在同一目录');
+                console.error('3. 图片文件是否存在且可访问');
+            }
+        }
+        
+        // 页面加载完成后检查图片是否加载成功
+        document.addEventListener('DOMContentLoaded', function() {
+            var img = document.getElementById('qrcode-image');
+            
+            if (img) {
+                // 检查图片是否已经加载失败
+                if (img.complete && img.naturalWidth === 0) {
+                    showQRError();
+                }
+                
+                // 监听图片加载错误
+                img.addEventListener('error', showQRError);
+                
+                // 图片加载成功
+                img.addEventListener('load', function() {
+                    console.log('二维码图片加载成功');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
